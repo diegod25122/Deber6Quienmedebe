@@ -38,6 +38,9 @@ export async function sesionDesdeUrl(url: string): Promise<boolean> {
 }
 
 export async function entrarConGoogle(): Promise<ResultadoGoogle> {
+  // TEMPORAL: para ver qué dirección de regreso manda la app.
+  
+
   const { data, error } = await supabase.auth.signInWithOAuth({
     provider: 'google',
     options: {
@@ -50,7 +53,10 @@ export async function entrarConGoogle(): Promise<ResultadoGoogle> {
   if (error) throw error;
   if (!data?.url) throw new Error('Supabase no devolvió la dirección de Google.');
 
+
+
   const respuesta = await WebBrowser.openAuthSessionAsync(data.url, urlDeRegreso);
+ 
   if (respuesta.type !== 'success') return 'cancelado';
 
   const creada = await sesionDesdeUrl(respuesta.url);
