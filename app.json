@@ -1,0 +1,53 @@
+{
+  "expo": {
+    "name": "¿Quién me debe?",
+    "slug": "quien-me-debe",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/images/icon.png",
+    "scheme": "quienmedebe",
+    "userInterfaceStyle": "light",
+    "backgroundColor": "#F2F0EC",
+    "ios": {
+      "supportsTablet": false,
+      "bundleIdentifier": "ec.edu.epn.esfot.quienmedebe"
+    },
+    "android": {
+      "package": "ec.edu.epn.esfot.quienmedebe",
+      "adaptiveIcon": {
+        "backgroundColor": "#1E2238",
+        "foregroundImage": "./assets/images/android-icon-foreground.png"
+      },
+      "softwareKeyboardLayoutMode": "resize",
+      "predictiveBackGestureEnabled": false
+    },
+    "web": {
+      "output": "single",
+      "favicon": "./assets/images/favicon.png"
+    },
+    "plugins": [
+      "expo-router",
+      [
+        "expo-splash-screen",
+        {
+          "backgroundColor": "#1E2238",
+          "image": "./assets/images/splash-icon.png",
+          "imageWidth": 160
+        }
+      ],
+      "expo-web-browser",
+      "@react-native-community/datetimepicker"
+    ],
+    "experiments": {
+      "typedRoutes": true,
+      "reactCompiler": true
+    },
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "7ebdde46-7fa8-4523-a349-25639be3c2e1"
+      }
+    },
+    "owner": "idiegouu"
+  }
+}

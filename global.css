@@ -1,0 +1,50 @@
+/*
+ * ¿Quién me debe? · Diseño con Uniwind (Tailwind CSS 4 para React Native).
+ *
+ * Idea visual: la "libreta del fiado" de la tienda del barrio. Hoja con
+ * renglones azules y margen rojo, tinta azul oscura, sellos de DEVUELTO y
+ * ATRASADO, y el ámbar de la animación de carga como color de acción.
+ *
+ * Cada --color-xxx se usa como clase sin prefijo: bg-tinta, text-debe,
+ * border-renglon... "static" deja las variables siempre disponibles, también
+ * para leerlas desde JavaScript con useCSSVariable (Reanimated las necesita).
+ */
+@import 'tailwindcss';
+@import 'uniwind';
+
+@theme static {
+  /* Tinta y papel */
+  --color-tinta: #1e2238;
+  --color-tinta-suave: #343a5c;
+  --color-papel: #f2f0ec;
+  --color-hoja: #fffefb;
+  --color-renglon: #cdd8ec;
+  --color-margen: #e58f93;
+  --color-tenue: #61677d;
+  --color-borde: #d9d6cf;
+  --color-blanco: #ffffff;
+  --color-velo: #1e2238cc;
+
+  /* Acción: el ámbar de la animación de carga */
+  --color-ambar: #ff9e10;
+  --color-ambar-hondo: #9a5800;
+  --color-ambar-claro: #ffecd0;
+
+  /* Estados de un préstamo */
+  --color-debe: #cf3440;
+  --color-debe-claro: #fde5e6;
+  --color-pago: #1b7f4b;
+  --color-pago-claro: #dbf1e3;
+  --color-pronto: #a8560a;
+  --color-pronto-claro: #fff0dc;
+
+  /* Marca de Google (botón "Continuar con Google") */
+  --color-google-azul: #4285f4;
+  --color-google-texto: #1f1f1f;
+
+  /* Tipografía: Bricolage Grotesque para títulos y montos (se carga en
+     src/app/_layout.tsx); el cuerpo usa la fuente del sistema. */
+  --font-display: BricolageGrotesque_800ExtraBold;
+  --font-display-bold: BricolageGrotesque_700Bold;
+  --font-display-medio: BricolageGrotesque_500Medium;
+}
