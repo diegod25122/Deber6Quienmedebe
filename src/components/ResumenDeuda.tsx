@@ -14,10 +14,15 @@ function MontoAnimado({ valor }: { valor: number }) {
     v.value = withTiming(valor, { duration: 900, easing: Easing.out(Easing.cubic) });
   }, [valor, v]);
 
+  // dinero() es JavaScript normal (usa Intl): no puede ejecutarse dentro del
+  // worklet, que corre en el hilo de la interfaz. El worklet solo manda el
+  // número con runOnJS y el formato se hace aquí, en el hilo de JavaScript.
+  const mostrar = (n: number) => setTexto(dinero(n));
+
   useAnimatedReaction(
     () => Math.round(v.value * 100) / 100,
     (actual, previo) => {
-      if (actual !== previo) runOnJS(setTexto)(dinero(actual));
+      if (actual !== previo) runOnJS(mostrar)(actual);
     },
   );
 
